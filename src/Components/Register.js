@@ -20,7 +20,6 @@ class Register extends React.Component {
     return (
       <div>
         <h1>Register</h1>
-        <h2>Hmm</h2>
         <input type="email" placeholder='Enter email' ref='email'/>
         <input type="password" placeholder='Enter password' ref='password'/>
         <input type="password" placeholder='Confirm password' ref='confirm-password'/>

@@ -1,6 +1,6 @@
 import React from 'react';
 import firebase from 'firebase';
-import { throws } from 'assert';
+
 class Login extends React.Component {
   login () {
     var email = this.refs.email.value;
