@@ -13,6 +13,8 @@ class Login extends React.Component {
       // ...
       console.log(errorCode, errorMessage);
     });
+
+    console.log('Login Successful');
   }
   render () {
     return (
