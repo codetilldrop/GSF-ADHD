@@ -1,25 +1,38 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
+import firebase from 'firebase';
+
+import {BrowserRouter as Router, Route} from 'react-router-dom';
+
+// Importing Components
+import Main from './Components/Main';
+import Login from './Components/Login';
+import Register from './Components/Register';
+
 class App extends Component {
+  componentDidMount() {
+    var config = {
+      apiKey: "AIzaSyCj-0-OYHv3boOY58KfcGq8mWpvctiVBGY",
+      authDomain: "gsf-adhd.firebaseapp.com",
+      databaseURL: "https://gsf-adhd.firebaseio.com",
+      projectId: "gsf-adhd",
+      storageBucket: "gsf-adhd.appspot.com",
+      messagingSenderId: "1037706831535"
+    };
+    firebase.initializeApp(config); 
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div>
+        <Router>
+          <div>
+            <Route exact path="/" component={Main}></Route>
+            <Route exact path="/login" component={Login}></Route>
+            <Route exact path="/register" component={Register}></Route>
+          </div>
+        </Router>
       </div>
     );
   }
